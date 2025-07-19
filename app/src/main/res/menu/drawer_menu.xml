@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item android:title="@string/profile">
+            <menu>
+                <item
+                    android:id="@+id/nav_notifications"
+                    android:icon="@drawable/baseline_circle_notifications_24"
+                    android:title="@string/notifications" />
+            </menu>
+        </item>
+        <item android:title="@string/overview">
+            <menu>
+                <item
+                    android:id="@+id/nav_categories"
+                    android:icon="@drawable/rounded_dehaze_24"
+                    android:title="@string/categories" />
+                <item
+                    android:id="@+id/nav_favorites"
+                    android:icon="@drawable/round_favorite_24"
+                    android:title="@string/favorites" />
+                <item
+                    android:id="@+id/nav_contact"
+                    android:icon="@drawable/round_contact_support_24"
+                    android:title="@string/contact" />
+            </menu>
+        </item>
+        <item android:title="@string/application">
+            <menu>
+                <item
+                    android:id="@+id/nav_share_app"
+                    android:icon="@drawable/baseline_share_24"
+                    android:title="@string/share_app" />
+                <item
+                    android:id="@+id/nav_rate"
+                    android:icon="@drawable/baseline_star_rate_24"
+                    android:title="@string/rate_app" />
+                <item
+                    android:id="@+id/nav_faqs"
+                    android:icon="@drawable/round_chat_24"
+                    android:title="@string/frequently_asked_questions" />
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/round_info_24"
+                    android:title="@string/settings" />
+            </menu>
+        </item>
+
+    </group>
+</menu>

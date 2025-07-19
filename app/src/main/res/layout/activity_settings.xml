@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SettingsActivity">
+
+    <!-- Reusable Toolbar -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_layout"/>
+    <!-- Theme Selection -->
+    <RadioGroup
+        android:id="@+id/themeRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:layout_below="@id/toolbar">
+
+        <RadioButton
+            android:id="@+id/useDeviceThemeRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use Device Theme" />
+
+        <RadioButton
+            android:id="@+id/lightThemeRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Light Theme" />
+
+        <RadioButton
+            android:id="@+id/darkThemeRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dark Theme" />
+    </RadioGroup>
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="12dp"
+        android:background="?attr/dashBackground"
+        android:layout_below="@id/themeRadioGroup"/>
+    <!-- Notification Preferences -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:layout_below="@id/divider">
+
+        <CheckBox
+            android:id="@+id/pushNotificationsCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Push Notifications" />
+
+        <CheckBox
+            android:id="@+id/emailNotificationsCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receive Email Notifications" />
+
+        <CheckBox
+            android:id="@+id/inAppNotificationsCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="In App Notifications" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="SAVE CHANGES"
+            android:layout_marginVertical="10dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="?attr/iconColor"
+            android:backgroundTint="?attr/colorOnPrimary"
+            app:strokeColor="?attr/colorPrimary"
+            app:strokeWidth="1dp" />
+    </LinearLayout>
+
+    <!-- Ad Banner -->
+    <FrameLayout
+        android:id="@+id/bannerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" />
+</RelativeLayout>
