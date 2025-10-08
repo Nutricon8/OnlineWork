@@ -32,38 +32,20 @@ public class SplashActivity extends BaseActivity {
         // Initialize TopOn SDK
         ATSDK.init(this, getString(R.string.TOPON_APP_ID), getString(R.string.TOPON_APP_KEY));
         //AdsManager.initializeTopOn(this);
-        ATSDK.setNetworkLogDebug(true);// Keep this or set to false for production
-
-        FacebookSdk.sdkInitialize(this);
-        AppEventsLogger.activateApp(getApplication());
-        //ATSDK.setDebuggerConfig(this,"825cfd32-9526-4faa-a95a-1235291307fa" , new ATDebuggerConfig.Builder(Adx_NETWORK).build());
-
-
-
-        // Initialize TopOn SDK
-        // //ATSDK.init(this, getString(R.string.TOPON_APP_ID), getString(R.string.TOPON_APP_KEY));
-        // //ATSDK.setNetworkLogDebug(true); // Keep this or set to false for production
+        ATSDK.setNetworkLogDebug(false);// Keep this or set to false for production
 
         // Initialize Facebook SDK
-        // //FacebookSdk.sdkInitialize(this);
-        // //AppEventsLogger.activateApp(getApplication());
+        FacebookSdk.sdkInitialize(this);
+        AppEventsLogger.activateApp(getApplication());
 
-       // REMOVE OR COMMENT OUT for production:
-       //ATSDK.setDebuggerConfig(this,"825cfd32-9526-4faa-a95a-1235291307fa" , new ATDebuggerConfig.Builder(Adx_NETWORK).build());
-
+        // REMOVE OR COMMENT OUT for production:
+        //ATSDK.setDebuggerConfig(this,"79bc6976240011493cbae44c52c7523b42e47d1c" , new ATDebuggerConfig.Builder(Adx_NETWORK).build());
+        // ATSDK.setDebuggerConfig(this, "825cfd32-9526-4faa-a95a-1235291307fa", new ATDebuggerConfig.Builder(ATSDK.NONPERSONALIZED).build());getGDPRDataLevel(this);
+        // Or check what constants are available:
+        //ATSDK.setDebuggerConfig(this, "825cfd32-9526-4faa-a95a-1235291307fa",new ATDebuggerConfig.Builder(15).build()); // ADX is usually ID 15
 
         // Optional: Verify integration
         //ATSDK.integrationChecking(this);
-
-
-
-        //ATSDK.setDebuggerConfig(this,"825cfd32-9526-4faa-a95a-1235291307fa" , new ATDebuggerConfig.Builder(Adx_NETWORK).build());
-        // //ATSDK.setDebuggerConfig(this, "825cfd32-9526-4faa-a95a-1235291307fa",
-        // //new ATDebuggerConfig.Builder(ATSDK.NONPERSONALIZED).build());   //getGDPRDataLevel(this);
-
-        // Or check what constants are available:
-        //ATSDK.setDebuggerConfig(this, "825cfd32-9526-4faa-a95a-1235291307fa",
-        //new ATDebuggerConfig.Builder(15).build()); // ADX is usually ID 15
 
         new Thread(() -> {
             try {
