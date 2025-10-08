@@ -11,9 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.preference.PreferenceManager;
-
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.kernelapps.onlinejobz.utils.AdsManager;
+
 
 public class BaseActivity extends AppCompatActivity {
 

@@ -1,5 +1,6 @@
 package com.kernelapps.onlinejobz.utils;
 
+
 import android.app.Activity;
 import android.widget.FrameLayout;
 
@@ -72,7 +73,17 @@ public class AdsManager {
 
         mBannerView = new ATBannerView(activity);
         mBannerView.setPlacementId(activity.getString(R.string.BANNER_PLACEMENT_ID));
+
+
         //mBannerView.setBannerAdSize(ATBannerView.BANNER_SIZE_320x50); // Or any other size
+
+        // Set custom 320x90 size using layout parameters
+        /*FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
+                dpToPx(320, activity),  // Convert 320dp to pixels
+                dpToPx(90, activity)    // Convert 90dp to pixels
+        );*/
+        //mBannerView.setLayoutParams(params);
+
 
         mBannerView.setBannerAdListener(new ATBannerListener() {
             @Override
@@ -100,6 +111,11 @@ public class AdsManager {
         bannerContainer.removeAllViews();
         bannerContainer.addView(mBannerView);
         mBannerView.loadAd();
+    }
+
+    private static int dpToPx(int dp, Activity activity) {
+        float density = activity.getResources().getDisplayMetrics().density;
+        return Math.round((float) dp * density);
     }
 
     public static void destroyBanner() {

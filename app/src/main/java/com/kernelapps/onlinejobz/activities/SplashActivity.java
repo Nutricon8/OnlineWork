@@ -1,6 +1,7 @@
 package com.kernelapps.onlinejobz.activities;
 
 import static com.anythink.network.adx.AdxATConst.DEBUGGER_CONFIG.Adx_NETWORK;
+//import static com.anythink.core.api.ATSDK.ADX_NETWORK_FIRM_ID; // Correct import
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -31,12 +32,38 @@ public class SplashActivity extends BaseActivity {
         // Initialize TopOn SDK
         ATSDK.init(this, getString(R.string.TOPON_APP_ID), getString(R.string.TOPON_APP_KEY));
         //AdsManager.initializeTopOn(this);
-        ATSDK.setNetworkLogDebug(true);
+        ATSDK.setNetworkLogDebug(true);// Keep this or set to false for production
 
         FacebookSdk.sdkInitialize(this);
         AppEventsLogger.activateApp(getApplication());
         //ATSDK.setDebuggerConfig(this,"825cfd32-9526-4faa-a95a-1235291307fa" , new ATDebuggerConfig.Builder(Adx_NETWORK).build());
 
+
+
+        // Initialize TopOn SDK
+        // //ATSDK.init(this, getString(R.string.TOPON_APP_ID), getString(R.string.TOPON_APP_KEY));
+        // //ATSDK.setNetworkLogDebug(true); // Keep this or set to false for production
+
+        // Initialize Facebook SDK
+        // //FacebookSdk.sdkInitialize(this);
+        // //AppEventsLogger.activateApp(getApplication());
+
+       // REMOVE OR COMMENT OUT for production:
+       //ATSDK.setDebuggerConfig(this,"825cfd32-9526-4faa-a95a-1235291307fa" , new ATDebuggerConfig.Builder(Adx_NETWORK).build());
+
+
+        // Optional: Verify integration
+        //ATSDK.integrationChecking(this);
+
+
+
+        //ATSDK.setDebuggerConfig(this,"825cfd32-9526-4faa-a95a-1235291307fa" , new ATDebuggerConfig.Builder(Adx_NETWORK).build());
+        // //ATSDK.setDebuggerConfig(this, "825cfd32-9526-4faa-a95a-1235291307fa",
+        // //new ATDebuggerConfig.Builder(ATSDK.NONPERSONALIZED).build());   //getGDPRDataLevel(this);
+
+        // Or check what constants are available:
+        //ATSDK.setDebuggerConfig(this, "825cfd32-9526-4faa-a95a-1235291307fa",
+        //new ATDebuggerConfig.Builder(15).build()); // ADX is usually ID 15
 
         new Thread(() -> {
             try {
